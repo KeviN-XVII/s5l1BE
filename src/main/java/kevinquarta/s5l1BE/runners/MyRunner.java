@@ -1,13 +1,12 @@
 package kevinquarta.s5l1BE.runners;
 
 import kevinquarta.s5l1BE.S5l1BeApplication;
-import kevinquarta.s5l1BE.entities.DivisioneMenu;
-import kevinquarta.s5l1BE.entities.Menu;
-import kevinquarta.s5l1BE.entities.Tavolo;
+import kevinquarta.s5l1BE.entities.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -21,14 +20,17 @@ public class MyRunner implements CommandLineRunner {
         menu.printMenu();
 
         Tavolo tavolo = new Tavolo(1,5);
-        List<DivisioneMenu> ciboOrdinato = List.of(menu.get)
+        DivisioneMenu margherita = ctx.getBean("margherita",DivisioneMenu.class);
+        DivisioneMenu acqua = ctx.getBean("water",DivisioneMenu.class);
+        DivisioneMenu vino = ctx.getBean("wine",DivisioneMenu.class);
 
+        List<DivisioneMenu> piattiOrdinati = new ArrayList<>(
+                List.of(margherita,acqua,vino)
+        );
 
-
-
-
-
-
+        Ordine ordine = new Ordine(1,tavolo,piattiOrdinati, StatoOrdine.PRONTO,5,1);
+        System.out.println("------ORDINE-------");
+        System.out.println(ordine);
 
 
         System.out.println("------------Fine Runner-------------");
