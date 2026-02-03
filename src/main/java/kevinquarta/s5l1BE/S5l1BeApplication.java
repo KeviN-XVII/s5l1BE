@@ -12,10 +12,6 @@ public class S5l1BeApplication {
 
 		SpringApplication.run(S5l1BeApplication.class, args);
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(S5l1BeApplication.class);
-
-		Menu menu = ctx.getBean(Menu.class);
-		menu.printMenu();
 
 
 	}

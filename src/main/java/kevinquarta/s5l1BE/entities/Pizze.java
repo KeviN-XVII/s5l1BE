@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Pizze extends DivisoneMenu {
+public class Pizze extends DivisioneMenu {
 
     private List<Toppings> toppings;
 

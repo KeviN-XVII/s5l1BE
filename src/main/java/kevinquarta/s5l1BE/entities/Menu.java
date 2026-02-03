@@ -1,14 +1,18 @@
 package kevinquarta.s5l1BE.entities;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class Menu {
 
     private List<Pizze> pizzas;
     private List<Toppings> toppings;
     private List<Bevande> bevande;
 
-
+    @Autowired
     public Menu(List<Pizze>pizzas, List<Toppings> toppings, List<Bevande> bevande) {
         this.pizzas = pizzas;
         this.toppings = toppings;

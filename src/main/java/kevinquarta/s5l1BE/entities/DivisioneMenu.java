@@ -6,13 +6,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class DivisoneMenu {
+public abstract class DivisioneMenu {
 
     private String name;
     private int calorie;
     private double prezzo;
 
-    public DivisoneMenu (String name, int calorie, double prezzo) {
+    public DivisioneMenu(String name, int calorie, double prezzo) {
         this.name = name;
         this.calorie = calorie;
         this.prezzo = prezzo;

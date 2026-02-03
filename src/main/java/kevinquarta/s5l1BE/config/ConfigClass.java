@@ -5,6 +5,7 @@ import kevinquarta.s5l1BE.entities.Bevande;
 import kevinquarta.s5l1BE.entities.Menu;
 import kevinquarta.s5l1BE.entities.Pizze;
 import kevinquarta.s5l1BE.entities.Toppings;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -71,13 +72,18 @@ public class ConfigClass {
 
 //MENU
 
+//    @Bean
+//    public Menu menu() {
+//        return new Menu(
+//                List.of(margherita(), hawaiian(),salamiPizza()),
+//                List.of(tomato(),cheese(), ham(),onions(), pineapple(),salami()),
+//                List.of(lemonade(),water(),wine())
+//        );
+//    }
+
     @Bean
-    public Menu menu() {
-        return new Menu(
-                List.of(margherita(), hawaiian(),salamiPizza()),
-                List.of(tomato(),cheese(), ham(),onions(), pineapple(),salami()),
-                List.of(lemonade(),water(),wine())
-        );
+    public double getCoperto(@Value("${prezzo.coperto}")double prezzoCoperto){
+         return prezzoCoperto;
     }
 
 
