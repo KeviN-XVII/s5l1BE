@@ -28,10 +28,11 @@ public class MyRunner implements CommandLineRunner {
                 List.of(margherita,acqua,vino)
         );
 
-        Ordine ordine = new Ordine(1,tavolo,piattiOrdinati, StatoOrdine.PRONTO,5,1);
         System.out.println("------ORDINE-------");
+        Ordine ordine = new Ordine(1,tavolo,piattiOrdinati, StatoOrdine.PRONTO,5,1);
         System.out.println(ordine);
-
+        System.out.println("------TOTALE DA PAGARE-------");
+        System.out.println("TOT DA PAGARE : " + ordine.getPrezzoTot());
 
         System.out.println("------------Fine Runner-------------");
     }
