@@ -9,4 +9,6 @@ public class Toppings extends DivisioneMenu {
     public Toppings(String name, int calorie, double prezzo) {
         super(name, calorie, prezzo);
     }
+
+
 }
